@@ -43,3 +43,52 @@ allSlide[0].classList.add('active');
 allFilterId[0].classList.remove('filter-on');
 
 
+let playStopInt;
+let leftRightContr = false;
+
+// Controlli
+
+contrPlayStop.addEventListener('click',
+  ()=>{
+    if (contrPlayStop.classList.contains("fa-play")){
+      modContrPlay (contrPlayStop, "fa-play", "fa-stop");
+      autoPlay();
+    }
+    else{
+      modContrPlay (contrPlayStop, "fa-stop", "fa-play");
+      autoStop ();
+    }
+  }
+)
+
+contrRightLeft.addEventListener('click',
+  ()=>{
+    if (contrRightLeft.classList.contains("fa-rotate-left")){
+      modContrPlay (contrRightLeft, "fa-rotate-left", "fa-rotate-right");
+      leftRightContr = true;
+    }
+    else{
+      modContrPlay (contrRightLeft, "fa-rotate-right", "fa-rotate-left");
+      leftRightContr = false;
+    }
+  }
+)
+
+allBoxPreview.forEach((item, index)=>{
+  item.addEventListener('click',
+    function (){
+      
+      changeCurrentSlide (index);
+    }
+  )
+})
+
+
+
+
+
+
+
+
+
+
