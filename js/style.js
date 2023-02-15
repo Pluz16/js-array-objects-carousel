@@ -83,7 +83,32 @@ allBoxPreview.forEach((item, index)=>{
   )
 })
 
+after.addEventListener('click',
 
+  function(){
+    if( currentSlide < (imageCarousel.length - 1)){
+      changeCurrentSlide (currentSlide + 1);
+    }
+    else{
+      changeCurrentSlide (0)
+    }
+  }
+
+)
+
+before.addEventListener('click',
+
+  function(){
+    if(currentSlide > 0){
+      changeCurrentSlide (currentSlide - 1);
+    }
+    else{
+      changeCurrentSlide (imageCarousel.length -1)
+    }
+    
+  }
+
+)
 
 
 
