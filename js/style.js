@@ -110,6 +110,39 @@ before.addEventListener('click',
 
 )
 
+// FUNZIONI 
+
+function autoPlay (){
+  
+    playStopInt = setInterval(() =>{
+      if (leftRightContr == true){
+        if(currentSlide > 0){
+          changeCurrentSlide (currentSlide - 1);
+        }
+        else{
+          changeCurrentSlide (imageCarousel.length -1)
+        }
+      }
+      else{
+  
+        if( currentSlide < (imageCarousel.length - 1)){
+          changeCurrentSlide (currentSlide + 1);
+        }
+        else{
+          changeCurrentSlide (0)
+        }
+      }
+  
+    },3000)
+    
+  }
+  
+  function autoStop () {
+    clearInterval(playStopInt);
+  };
+
+  
+
 
 
 
